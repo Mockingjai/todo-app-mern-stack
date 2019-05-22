@@ -1,0 +1,41 @@
+.edit_wrapper {
+    display: flex;
+}
+.form_edit {
+    display: flex;
+    flex-direction: column;
+}
+.inp_name_ed {
+    margin: 15px 0 15px 0;
+}
+.inp_name_ed, .inp_date_ed {
+    width: 250px;
+    height: 20px;
+    border-radius: 3px 3px;
+    font-size: 18px;
+    font-family: "Fira Code Medium", sans-serif;
+}
+.on_delete_btn {
+    cursor: pointer;
+    margin: 15px 0 0 0;
+    border-radius: 3px 3px;
+    border: 1px solid blue;
+    background-color: blue;
+    color: white;
+}
+.on_update_btn {
+    cursor: pointer;
+    margin: 0 0 15px 0;
+    border-radius: 3px 3px;
+    border: 1px solid hotpink;
+    background-color: hotpink;
+    color: white;
+}
+.on_cancle_btn {
+    cursor: pointer;
+    margin: 0 0 15px 0;
+    border-radius: 3px 3px;
+    border: 1px solid lawngreen;
+    background-color: lawngreen;
+    color: white;
+}

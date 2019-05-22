@@ -1,0 +1,36 @@
+.list_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.list_element {
+    /*margin: 15px 0 0 0;*/
+    border: 1px solid navajowhite;
+    padding: 15px 15px;
+    border-radius: 2px 2px;
+    list-style: none;
+    margin: 15px 0 0 0;
+}
+.on_create {
+    cursor: pointer;
+    border: none;
+    background-color: navajowhite;
+    color: black;
+    height: 35px;
+}
+.on_create:hover {
+    box-shadow: olivedrab 4px 2px 3px;
+    transform: scale(1.1);
+}
+.on_profile {
+    cursor: pointer;
+    border: none;
+    background-color: hotpink;
+    color: white;
+    height: 35px;
+}
+.on_profile:hover {
+    box-shadow: deepskyblue 4px 2px 3px;
+    transform: scale(1.1);
+}

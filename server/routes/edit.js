@@ -5,9 +5,9 @@ const _Events = require('../models/Events');
 const auth = require('../middleware/auth');
 
 //  @TYPE PUT        /edit
-//  @DESCRIPTION     edit todo
+//  @DESCRIPTION     edit todo by id which provided in URL
 //  @ACCESS          Public
-router.post('/:id', auth ,async (req, res) => {
+router.put('/:id', auth ,async (req, res) => {
     console.log(req.params)
    _Events.findById(req.params.id, async (err, event) => {
        console.log(event)
@@ -16,8 +16,8 @@ router.post('/:id', auth ,async (req, res) => {
         }
         event.name = req.body.name;
         event.date = req.body.date;
+        event.completed = req.body.completed;
         await event.save();
-        // res.json({ event });
         res.send(event);
    });
 });

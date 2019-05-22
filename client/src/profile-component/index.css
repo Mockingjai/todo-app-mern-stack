@@ -1,0 +1,49 @@
+.user_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.user_info {
+    font-family: "Droid Sans Mono Slashed", serif;
+    font-size: 18px;
+    margin: 0 0 0 25px;
+}
+.btn_wrapper {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 0 25px;
+}
+.bnt_out {
+    cursor: pointer;
+    border: none;
+    background-color: crimson;
+    color: white;
+    width: 100px;
+    height: 25px;
+}
+.bnt_out:hover {
+    transform: scale(1.1);
+    box-shadow: greenyellow 2px 4px 6px;
+}
+.bnt_show {
+    cursor: pointer;
+    border: none;
+    background-color: salmon;
+    color: white;
+    height: 25px;
+}
+.bnt_show:hover {
+    transform: scale(1.1);
+    box-shadow: wheat 2px 4px 6px;
+}
+.bnt_create {
+    cursor: pointer;
+    border: none;
+    background-color: hotpink;
+    color: white;
+    height: 25px;
+}
+.bnt_create:hover {
+    transform: scale(1.1);
+    box-shadow: blue 2px 4px 6px;
+}

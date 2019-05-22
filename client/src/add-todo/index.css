@@ -1,0 +1,57 @@
+.create_wrapper {
+    display: flex;
+    border: 1px solid black;
+    justify-content: center;
+}
+.create_form {
+    display: flex;
+    flex-direction: column;
+}
+.inp_name {
+    margin: 15px 0 15px 0;
+}
+.inp_name, .inp_date {
+    width: 250px;
+    height: 20px;
+    border-radius: 3px 3px;
+    font-size: 18px;
+    font-family: "Fira Code Medium", sans-serif;
+}
+.btn_smb {
+    cursor: pointer;
+    margin: 15px 0 15px 0;
+    border-radius: 3px 3px;
+    border: 1px solid blue;
+    background-color: blue;
+    color: white;
+}
+.btn_smb:hover {
+    transform: scale(1.1);
+    box-shadow: grey 4px 4px 4px;
+}
+/**/
+.btn_profile {
+    cursor: pointer;
+    border-radius: 3px 3px;
+    border: 1px solid goldenrod;
+    background-color: goldenrod;
+    color: white;
+    margin: 0 0 15px 0;
+}
+.btn_profile:hover {
+    transform: scale(1.1);
+    box-shadow: grey 4px 4px 4px;
+}
+/**/
+.btn_ev {
+    cursor: pointer;
+    border-radius: 3px 3px;
+    border: 1px solid navajowhite;
+    background-color: navajowhite;
+    color: black;
+    margin: 0 0 15px 0;
+}
+.btn_ev:hover {
+    transform: scale(1.1);
+    box-shadow: chocolate 4px 4px 4px;
+}

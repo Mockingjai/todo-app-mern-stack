@@ -1,0 +1,37 @@
+.home_page_wrapper {
+    margin: 0 auto;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home_component {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.loginBtn button {
+    margin: 0 45px 0 0;
+    border: none;
+    background-color: deepskyblue;
+    color:white;
+    height: 50px;
+    cursor: pointer;
+}
+.loginBtn button:hover {
+    box-shadow: wheat 4px 5px 3px;
+    transform: scale(1.1);
+}
+.registBtn button {
+    border: none;
+    background-color: greenyellow;
+    color:white;
+    height: 50px;
+    cursor: pointer;
+}
+.registBtn button:hover {
+    box-shadow: hotpink 4px 5px 3px;
+    transform: scale(1.1);
+}

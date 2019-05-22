@@ -31,14 +31,17 @@ router.post('/register', [
         //Creating new user
         let user = new User({
             email: email,
-            password: password
+            password: password,
+            salt: '',
         });
         //Crypt password with salt
-        const newPassword = await _crypt(password);
-        user.password = newPassword;
+        const hashed = await _crypt(password);
+        user.password = hashed.password;
+        user.salt = hashed.salt;
         //Add new user to db
         await user.save();
-       res.status(200).json(user);
+        res.status(200).json(user);
+        res.redirect('/login');
     } catch (e) {
         console.log(`${e.message}`);
         res.status(500).send('Server error');
@@ -81,12 +84,17 @@ router.post('/login', async (req, res) => {
 router.get('/me', auth, async (req, res) => {
     try {
         //Get access to the home page of the user
-        const user = await User.findById(req.user.id).select('-password');
+        const user = await User.findById(req.user.id).select('-password').select('-salt');
         res.json(user);
     } catch (e) {
         console.log(e.message);
         res.status(500).send('Server error');
     }
+});
+
+
+router.post('/me/logout', auth, (req, res) => {
+    res.status(201).send('Loged out');
 });
 
 module.exports = router;

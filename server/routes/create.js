@@ -9,7 +9,7 @@ router.post('/', auth, async (req, res) => {
         let event = new _Events({
             name: req.body.name,
             date: req.body.email,
-            owner: localStorage.getItem('id')
+            owner: req.body.owner,
         });
         await event.save();
         res.status(201).json(event);

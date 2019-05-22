@@ -15,7 +15,7 @@ const EventSchema = new mongoose.Schema({
     owner: {
         type: Schema.Types.ObjectId,
         ref: 'owner'
-    }
+    },
 });
 EventSchema.plugin(mongoosePaginate);
 
