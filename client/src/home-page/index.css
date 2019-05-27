@@ -1,37 +1,64 @@
-.home_page_wrapper {
-    margin: 0 auto;
-    border: 1px solid black;
+
+.wrapper-holder-home {
+    background-color: #313848;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+.home_wrapper {
+    color: #dedede;
+    display: flex;
+    height: 615px;
     justify-content: center;
     align-items: center;
 }
 .home_component {
-    height: 300px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+.titles_block-home {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 25px 25px;
 }
-.loginBtn button {
-    margin: 0 45px 0 0;
+.action_btn-home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    margin: 25px 0 0 0;
+}
+.btn-home {
+    display: flex;
+    justify-content: space-between;
+    width: 567px;
+    padding: 15px 20px;
+}
+.loginBtn-home button {
+    height: 30px;
     border: none;
-    background-color: deepskyblue;
-    color:white;
-    height: 50px;
     cursor: pointer;
+    background-color: #8f758e;
+    color: #dedede;
 }
-.loginBtn button:hover {
-    box-shadow: wheat 4px 5px 3px;
-    transform: scale(1.1);
+.loginBtn-home button:hover {
+    background-color: #8adfdc;
+    color: #313848;
 }
-.registBtn button {
+.registBtn-home button {
+    height: 30px;
     border: none;
-    background-color: greenyellow;
-    color:white;
-    height: 50px;
     cursor: pointer;
+    background-color: #8f758e;
+    color: #dedede;
 }
-.registBtn button:hover {
-    box-shadow: hotpink 4px 5px 3px;
-    transform: scale(1.1);
+.registBtn-home button:hover {
+    background-color: #8adfdc;
+    color: #313848;
 }

@@ -1,37 +1,63 @@
-.wrapper_login {
+.login_wrapper {
+    background-color: #107595;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 610px;
 }
-.form_wrapper {
-    height: 150px;
+.login {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    align-content: space-between;
+    height: 250px;
 }
-.inp_email {
-    margin: 15px 0 0 0;
+.user__header_login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
-.inp_email, .inp_pass {
+.user__title_login {
+    display: flex;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+.form__group_login {
+}
+.form__input {
     width: 250px;
-    height: 20px;
-    border-radius: 3px 3px;
-    font-size: 18px;
-    font-family: "Fira Code Medium", sans-serif;
+    margin: 5px 10px 5px 10px;
+    padding: 5px;
+    border-radius: 5px 5px 5px 3px;
+    border: none;
 }
-.btn_sb {
-    width: 100px;
-    height: 40px;
+.btn_login_wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px 15px;
+}
+.btn_login_login {
+    margin: 0 0 25px 0;
+    border: none;
+    background-color: #d61d4e;
+    color: #ffdee6;
     cursor: pointer;
-    border-radius: 3px 3px;
-    border: 1px solid blue;
-    background-color: blue;
-    color: white;
+    height: 30px;
 }
-.btn_sb:hover {
-    transform: scale(1.1);
-    box-shadow: grey 4px 4px 4px;
+.btn_register_login {
+    border: none;
+    background-color: #d61d4e;
+    color: #ffdee6;
+    cursor: pointer;
+    height: 30px;
+}
+.btn_register_login:hover {
+    background-color: #ff0b55;
+}
+.btn_login_login:hover {
+    background-color: #ff0b55;
 }

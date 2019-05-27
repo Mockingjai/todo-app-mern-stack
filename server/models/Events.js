@@ -5,12 +5,10 @@ const mongoosePaginate = require('mongoose-paginate');
 const EventSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true,
     },
     date: {
         type: Date,
         default: Date.now,
-        // required: true
     },
     owner: {
         type: Schema.Types.ObjectId,

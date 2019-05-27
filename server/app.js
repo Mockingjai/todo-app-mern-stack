@@ -28,10 +28,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/users', userRouter);
-app.use('/create', createRouter);
-app.use('/show', showRouter);
-app.use('/edit', editRouter);
-app.use('/delete', deleteRouter);
+app.use('/events/create', createRouter);
+app.use('/events/show', showRouter);
+app.use('/events/edit', editRouter);
+app.use('/events/delete', deleteRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

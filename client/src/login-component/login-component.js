@@ -9,14 +9,46 @@ export default class Registration extends Component {
         this.state = {
             email: '',
             password: '',
+            emailError: '',
+            passwordError: ''
         }
     }
 
     onEmailChange = e => this.setState({ email: e.target.value });
     onPasswordChange = e => this.setState({ password: e.target.value });
+    validate = () => {
+        let emailError = '';
+        let passwordError = '';
 
+        if(!this.state.email) {
+            emailError = "Email field can't be empty";
+        }
+        if(!this.state.email.includes("@")) {
+            emailError = "Invalid email";
+        }
+        if(!this.state.password) {
+            passwordError = 'Password field can\'t be empty'
+        }
+        if(this.state.password.length < 6) {
+            passwordError = 'Field password require 6 or more characters'
+        }
+        if(emailError || passwordError) {
+            this.setState({emailError, passwordError});
+        }
+        return true;
+    };
     onSubmit = ( e ) => {
         e.preventDefault();
+        this.setState({
+            emailError: '',
+            passwordError: '',
+        });
+        const isValid = this.validate();
+        if (isValid) {
+            console.log(this.state);
+        } else {
+            console.log('Error');
+        }
         const checkUser = {
             email: this.state.email,
             password: this.state.password
@@ -35,36 +67,44 @@ export default class Registration extends Component {
 
         this.setState({
             email: '',
-            password: ''
+            password: '',
         })
     };
+    onRegister = () => history.push('/users/register');
 
     render() {
         return (
-            <div>
-                <div>
-                    <div className='wrapper_login'>
-                        <h2>Login page</h2>
-                        <form onSubmit={this.onSubmit} className='form_wrapper'>
-                            <input
-                                className='inp_email'
-                                type="text"
-                                placeholder="Enter email"
-                                defaultValue={this.state.email}
-                                onChange={this.onEmailChange}
-                            />
-                            <input
-                                className='inp_pass'
-                                type="password"
-                                placeholder="Enter password"
-                                defaultValue={this.state.password}
-                                onChange={this.onPasswordChange}
-                            />
-                            <button type="submit" className='btn_sb'>Submit</button>
-                        </form>
+            <div className='login_wrapper'>
+                <div className='login'>
+                    <div className='user__header_login'>
+                        <div className='wrapper_login'>
+                            <h2 className='user__title_login'>Login page</h2>
+                            <form onSubmit={this.onSubmit} className='form'>
+                                <div className='form__group_login'>
+                                    <input
+                                        className='form__input'
+                                        type="text"
+                                        placeholder="Enter email"
+                                        defaultValue={this.state.email}
+                                        onChange={this.onEmailChange}
+                                    /><div style={{color: 'red'}}>{this.state.emailError}</div>
+                                    <input
+                                        className='form__input'
+                                        type="password"
+                                        placeholder="Enter password"
+                                        defaultValue={this.state.password}
+                                        onChange={this.onPasswordChange}
+                                    /><div style={{color: 'red'}}>{this.state.passwordError}</div>
+                                </div>
+                                <div className='btn_login_wrapper'>
+                                    <button type="submit" className='btn_login_login'>Log in</button>
+                                    <button type="submit" className='btn_register_login' onClick={this.onRegister}>To Regitser page</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         )
     }
-}
+};

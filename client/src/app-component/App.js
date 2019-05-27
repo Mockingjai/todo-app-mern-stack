@@ -20,9 +20,9 @@ class  App extends Component {
             <Route  path='/users/login' component={Login} />
             <Route path='/users/register' component={Register}/>
             <Route path='/users/me' component={Profile} />
-            <Route path='/show' component={TodoList} />
-            <Route path='/create' component={AddTodo} />
-            <Route path='/edit/' component={EditTodo} />
+            <Route path='/events/show/' component={TodoList} />
+            <Route path='/events/create' component={AddTodo} />
+            <Route path='/events/edit' component={EditTodo} />
           </Switch>
         </Fragment>
     );

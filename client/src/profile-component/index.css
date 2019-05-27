@@ -1,49 +1,85 @@
-.user_wrapper {
+.profile_wrapper {
+    margin: 100px 50px;
     display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #7189bf;
+    color: #ebefd0;
+    height: 200px;
+}
+.btn_out {
+    cursor: pointer;
+    border: none;
+    height: 30px;
+    width: 100px;
+    background-color: #d61d4e;
+    color: #ffdee6;
+    position: absolute;
+    left: 1200px;
+    top: 165px;
+}
+.btn_out:hover {
+    background-color: #ff0b55;
+    color: #ffdee6;
+}
+.btn_show {
+    cursor: pointer;
+    border: none;
+    height: 30px;
+    width: 140px;
+    background-color: #d61d4e;
+    color: #ffdee6;
+    position: absolute;
+    left: 400px;
+    top: 165px;
+}
+.btn_show:hover {
+    background-color: #ff0b55;
+    color: #ffdee6;
+}
+.btn_create {
+    cursor: pointer;
+    border: none;
+    height: 30px;
+    width: 140px;
+    background-color: #d61d4e;
+    color: #ffdee6;
+    position: absolute;
+    top: 165px;
+}
+.btn_create:hover {
+    background-color: #ff0b55;
+    color: #ffdee6;
+}
+.user_wrapper_profile {
+}
+.email {
+    font-weight: bold;
+    font-size: 18px;
+}
+span {
+    color: #d65a31;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 60px;
 }
 .user_info {
-    font-family: "Droid Sans Mono Slashed", serif;
-    font-size: 18px;
-    margin: 0 0 0 25px;
-}
-.btn_wrapper {
-    width: 400px;
     display: flex;
-    justify-content: space-between;
-    margin: 0 0 0 25px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
-.bnt_out {
-    cursor: pointer;
-    border: none;
-    background-color: crimson;
-    color: white;
-    width: 100px;
-    height: 25px;
+.user_info_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 15px 0;
 }
-.bnt_out:hover {
-    transform: scale(1.1);
-    box-shadow: greenyellow 2px 4px 6px;
-}
-.bnt_show {
-    cursor: pointer;
-    border: none;
-    background-color: salmon;
-    color: white;
-    height: 25px;
-}
-.bnt_show:hover {
-    transform: scale(1.1);
-    box-shadow: wheat 2px 4px 6px;
-}
-.bnt_create {
-    cursor: pointer;
-    border: none;
-    background-color: hotpink;
-    color: white;
-    height: 25px;
-}
-.bnt_create:hover {
-    transform: scale(1.1);
-    box-shadow: blue 2px 4px 6px;
+.event_count {
+    font-family: "Droid Sans", cursive;
+    font-size: 22px;
+    /*position: absolute;*/
+    /*left: 445px;*/
+    /*top: 240px;*/
 }

@@ -5,14 +5,24 @@ import history from '../history';
 import './index.css';
 
 const Todo = ( props ) => {
-  return (
-      <div>
+   const  onCreateToggle = (  ) => {
+        history.push('/events/create');
+    };
+   const onBackToProfile = (  ) => {
+        history.push('/users/me');
+    };
+
+   return (
+      <div className='show_wrapper'>
           <li className='list_element'>
-              <span>
                   {props.events.name}
-              </span>
-              <br />
-              <Link to={'/edit/' + props.events._id }>Edit</Link>
+                  <br />
+                <Link to={'/events/edit/' + props.events._id } className='link_to'>Edit</Link>
+              <div className='btn_show_holder'>
+                  <button onClick={onCreateToggle} className='on_create'>Create event</button>
+                  <br />
+                  <button onClick={onBackToProfile} className='on_profile'>Back to my profile</button>
+              </div>
           </li>
       </div>
   )
@@ -27,7 +37,7 @@ class TodoList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3001/show',
+        axios.get('http://localhost:3001/events/show',
             {headers: {
                 'x-auth-token': localStorage.getItem('token'),
                 'owner': localStorage.getItem('id')
@@ -39,7 +49,7 @@ class TodoList extends Component {
                 });
             })
             .catch(err => {
-                history.push('/users/login');
+                // history.push('/users/login');
                 console.log(err);
             });
     }
@@ -51,12 +61,6 @@ class TodoList extends Component {
             />;
         })
     };
-    onCreateToggle = (  ) => {
-        history.push('/create');
-    };
-    onBackToProfile = (  ) => {
-      history.push('/users/me');
-    };
     render() {
         return (
             <div className='list_wrapper'>
@@ -66,9 +70,6 @@ class TodoList extends Component {
                     </ul>
                 </div>
                 <br />
-                <button onClick={this.onCreateToggle} className='on_create'>Create event</button>
-                <br />
-                <button onClick={this.onBackToProfile} className='on_profile'>Back to my profile</button>
             </div>
         )
     }

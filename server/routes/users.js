@@ -6,28 +6,31 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const auth = require('../middleware/auth');
+const admin = require('../middleware/admin');
 const _crypt = require('../helpers/crypt-password');
 const User = require('../models/User');
+const _Events = require('../models/Events');
 
 // @    Method POST /users/register
 // @    Register new user
 // @    Public
 router.post('/register', [
     //Validating form
-    check('email').isEmail(),
-    check('password').isLength({ min: 6 }),
+    check('email', 'Email field cannot be empty').isEmail(),
+    check('password', 'Password cannot be empty').isLength({ min: 6 }),
 ] , async (req, res) => {
-    const {email , password} = req.body;
+    const {email , password, role} = req.body;
     const errors = validationResult(req);
     if(!errors.isEmpty()) {
-        return res.status(401).send('Data is not valid');
+        return res.status(401).send(errors);
     }
     try {
         // *Search user in db, if already exist throw an error
-        let error = await User.findOne({ email });
-        if(error) {
-            return res.status(401).send('User is already exist');
-        }
+        await User.findOne({ email }, (err, user) => {
+            if(user) {
+                res.status(422).send('User already exist');
+            }
+        });
         //Creating new user
         let user = new User({
             email: email,
@@ -48,11 +51,19 @@ router.post('/register', [
     }
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login', [
+    check('email').isEmail(),
+    check('password').isLength({min: 6})
+] , async (req, res) => {
     let user = User;
     const { email, password } = req.body;
+    const errors = validationResult(req.body);
+    if(!errors.isEmpty()) {
+        res.status(401).send('Validation error');
+    }
     try {
         const find = await User.findOne({ email });
+        
         const payload = {
             user: {
                 id: find._id
@@ -85,13 +96,12 @@ router.get('/me', auth, async (req, res) => {
     try {
         //Get access to the home page of the user
         const user = await User.findById(req.user.id).select('-password').select('-salt');
-        res.json(user);
+        res.json({user: user});
     } catch (e) {
         console.log(e.message);
         res.status(500).send('Server error');
     }
 });
-
 
 router.post('/me/logout', auth, (req, res) => {
     res.status(201).send('Loged out');
