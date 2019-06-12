@@ -1,6 +1,9 @@
-## Welcome to GitHub Pages
-
-## Markdown
-
 # This is Todo App
-## Author Mockingjay(Illya)
+## This Application created with MERN stack:
+    M-MongoDB
+    E-Express
+    R-React.js
+    N-Node.js
+
+### Code ###
+## Author Illya Vel
