@@ -13,4 +13,8 @@
 ## First of all the user has to create his/her profile
 ## Then login in the application with his/her own email and password
 ## After those things above he/she has access to profile where user can see his profile or create new task
-## Author Illya Vel
+
+### JS Code 
+create = (name) => console.log(name)
+
+## Author Illya Velichko
